@@ -21,6 +21,7 @@ public class WelcomeController {
     @RequestMapping("/welcome")
     public String showWelcome(Model model){
         model.addAttribute("welcomeMsg",welcomeService.generateWelcomeMessage());
+        model.addAttribute("persons",welcomeService.findAll());
         return "welcome";
     }
 }
